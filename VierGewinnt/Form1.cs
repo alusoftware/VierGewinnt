@@ -14,6 +14,8 @@ namespace VierGewinnt
         {
             if (IsPlayerInputValid(TextBox_PlayerOne.Text, TextBox_PlayerTwo.Text))
                 InitalizePlayfield();
+            else
+                MessageBox.Show("Beide Spieler müssen einen Namen haben!");
         }
 
         private bool IsPlayerInputValid(string playerOne, string playerTwo)
