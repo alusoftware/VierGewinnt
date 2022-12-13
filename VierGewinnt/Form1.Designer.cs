@@ -491,6 +491,7 @@
             this.Button_ColG.TabIndex = 48;
             this.Button_ColG.Text = "|\r\nV";
             this.Button_ColG.UseVisualStyleBackColor = true;
+            this.Button_ColG.Click += new System.EventHandler(this.Button_ColG_Click);
             // 
             // Button_ColF
             // 
@@ -500,6 +501,7 @@
             this.Button_ColF.TabIndex = 47;
             this.Button_ColF.Text = "|\r\nV";
             this.Button_ColF.UseVisualStyleBackColor = true;
+            this.Button_ColF.Click += new System.EventHandler(this.Button_ColF_Click);
             // 
             // Button_ColE
             // 
@@ -509,6 +511,7 @@
             this.Button_ColE.TabIndex = 46;
             this.Button_ColE.Text = "|\r\nV";
             this.Button_ColE.UseVisualStyleBackColor = true;
+            this.Button_ColE.Click += new System.EventHandler(this.Button_ColE_Click);
             // 
             // Button_ColD
             // 
@@ -518,6 +521,7 @@
             this.Button_ColD.TabIndex = 45;
             this.Button_ColD.Text = "|\r\nV";
             this.Button_ColD.UseVisualStyleBackColor = true;
+            this.Button_ColD.Click += new System.EventHandler(this.Button_ColD_Click);
             // 
             // Button_ColC
             // 
@@ -527,6 +531,7 @@
             this.Button_ColC.TabIndex = 44;
             this.Button_ColC.Text = "|\r\nV";
             this.Button_ColC.UseVisualStyleBackColor = true;
+            this.Button_ColC.Click += new System.EventHandler(this.Button_ColC_Click);
             // 
             // Button_ColB
             // 
@@ -536,6 +541,7 @@
             this.Button_ColB.TabIndex = 43;
             this.Button_ColB.Text = "|\r\nV";
             this.Button_ColB.UseVisualStyleBackColor = true;
+            this.Button_ColB.Click += new System.EventHandler(this.Button_ColB_Click);
             // 
             // Button_ColA
             // 
@@ -545,6 +551,7 @@
             this.Button_ColA.TabIndex = 42;
             this.Button_ColA.Text = "|\r\nV";
             this.Button_ColA.UseVisualStyleBackColor = true;
+            this.Button_ColA.Click += new System.EventHandler(this.Button_ColA_Click);
             // 
             // TextBox_PlayerOne
             // 
@@ -586,7 +593,7 @@
             this.button1.TabIndex = 47;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.OnStartGameClick);
             // 
             // RadioButton_StartFirstPlayer
             // 

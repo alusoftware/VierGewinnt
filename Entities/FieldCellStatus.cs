@@ -2,6 +2,6 @@
 {
     public enum FieldCellStatus
     {
-        Red, Yellow, Empty
+        Empty, Red, Yellow
     }
 }
