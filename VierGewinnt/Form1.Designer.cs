@@ -78,13 +78,13 @@
             this.Button_ColC = new System.Windows.Forms.Button();
             this.Button_ColB = new System.Windows.Forms.Button();
             this.Button_ColA = new System.Windows.Forms.Button();
-            this.TextBox_PlayerOne = new System.Windows.Forms.TextBox();
-            this.TextBox_PlayerTwo = new System.Windows.Forms.TextBox();
-            this.Label_PlayerOne = new System.Windows.Forms.Label();
-            this.Label_PlayerTwo = new System.Windows.Forms.Label();
+            this.TextBox_PlayerRed = new System.Windows.Forms.TextBox();
+            this.TextBox_PlayerYellow = new System.Windows.Forms.TextBox();
+            this.Label_PlayerRed = new System.Windows.Forms.Label();
+            this.Label_PlayerYellow = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.RadioButton_StartFirstPlayer = new System.Windows.Forms.RadioButton();
-            this.RadioButton_StartSecondPlayer = new System.Windows.Forms.RadioButton();
+            this.RadioButton_StartRedPlayer = new System.Windows.Forms.RadioButton();
+            this.RadioButton_StartYellowPlayer = new System.Windows.Forms.RadioButton();
             this.Label_ChoosePlayerFirstMove = new System.Windows.Forms.Label();
             this.PlayerInput = new System.Windows.Forms.Panel();
             this.PlayField.SuspendLayout();
@@ -555,35 +555,35 @@
             // 
             // TextBox_PlayerOne
             // 
-            this.TextBox_PlayerOne.Location = new System.Drawing.Point(90, 4);
-            this.TextBox_PlayerOne.Name = "TextBox_PlayerOne";
-            this.TextBox_PlayerOne.Size = new System.Drawing.Size(100, 23);
-            this.TextBox_PlayerOne.TabIndex = 43;
+            this.TextBox_PlayerRed.Location = new System.Drawing.Point(90, 4);
+            this.TextBox_PlayerRed.Name = "TextBox_PlayerRed";
+            this.TextBox_PlayerRed.Size = new System.Drawing.Size(100, 23);
+            this.TextBox_PlayerRed.TabIndex = 43;
             // 
             // TextBox_PlayerTwo
             // 
-            this.TextBox_PlayerTwo.Location = new System.Drawing.Point(90, 36);
-            this.TextBox_PlayerTwo.Name = "TextBox_PlayerTwo";
-            this.TextBox_PlayerTwo.Size = new System.Drawing.Size(100, 23);
-            this.TextBox_PlayerTwo.TabIndex = 44;
+            this.TextBox_PlayerYellow.Location = new System.Drawing.Point(90, 36);
+            this.TextBox_PlayerYellow.Name = "TextBox_PlayerYellow";
+            this.TextBox_PlayerYellow.Size = new System.Drawing.Size(100, 23);
+            this.TextBox_PlayerYellow.TabIndex = 44;
             // 
-            // Label_PlayerOne
+            // Label_PlayerRed
             // 
-            this.Label_PlayerOne.AutoSize = true;
-            this.Label_PlayerOne.Location = new System.Drawing.Point(1, 7);
-            this.Label_PlayerOne.Name = "Label_PlayerOne";
-            this.Label_PlayerOne.Size = new System.Drawing.Size(77, 15);
-            this.Label_PlayerOne.TabIndex = 45;
-            this.Label_PlayerOne.Text = "Erster Spieler:";
+            this.Label_PlayerRed.AutoSize = true;
+            this.Label_PlayerRed.Location = new System.Drawing.Point(1, 7);
+            this.Label_PlayerRed.Name = "Label_PlayerRed";
+            this.Label_PlayerRed.Size = new System.Drawing.Size(76, 15);
+            this.Label_PlayerRed.TabIndex = 45;
+            this.Label_PlayerRed.Text = "Roter Spieler:";
             // 
-            // Label_PlayerTwo
+            // Label_PlayerYellow
             // 
-            this.Label_PlayerTwo.AutoSize = true;
-            this.Label_PlayerTwo.Location = new System.Drawing.Point(1, 39);
-            this.Label_PlayerTwo.Name = "Label_PlayerTwo";
-            this.Label_PlayerTwo.Size = new System.Drawing.Size(87, 15);
-            this.Label_PlayerTwo.TabIndex = 46;
-            this.Label_PlayerTwo.Text = "Zweiter Spieler:";
+            this.Label_PlayerYellow.AutoSize = true;
+            this.Label_PlayerYellow.Location = new System.Drawing.Point(1, 39);
+            this.Label_PlayerYellow.Name = "Label_PlayerYellow";
+            this.Label_PlayerYellow.Size = new System.Drawing.Size(82, 15);
+            this.Label_PlayerYellow.TabIndex = 46;
+            this.Label_PlayerYellow.Text = "Gelber Spieler:";
             // 
             // button1
             // 
@@ -597,23 +597,23 @@
             // 
             // RadioButton_StartFirstPlayer
             // 
-            this.RadioButton_StartFirstPlayer.AutoSize = true;
-            this.RadioButton_StartFirstPlayer.Location = new System.Drawing.Point(207, 9);
-            this.RadioButton_StartFirstPlayer.Name = "RadioButton_StartFirstPlayer";
-            this.RadioButton_StartFirstPlayer.Size = new System.Drawing.Size(14, 13);
-            this.RadioButton_StartFirstPlayer.TabIndex = 48;
-            this.RadioButton_StartFirstPlayer.TabStop = true;
-            this.RadioButton_StartFirstPlayer.UseVisualStyleBackColor = true;
+            this.RadioButton_StartRedPlayer.AutoSize = true;
+            this.RadioButton_StartRedPlayer.Location = new System.Drawing.Point(207, 9);
+            this.RadioButton_StartRedPlayer.Name = "RadioButton_StartFirstPlayer";
+            this.RadioButton_StartRedPlayer.Size = new System.Drawing.Size(14, 13);
+            this.RadioButton_StartRedPlayer.TabIndex = 48;
+            this.RadioButton_StartRedPlayer.TabStop = true;
+            this.RadioButton_StartRedPlayer.UseVisualStyleBackColor = true;
             // 
             // RadioButton_StartSecondPlayer
             // 
-            this.RadioButton_StartSecondPlayer.AutoSize = true;
-            this.RadioButton_StartSecondPlayer.Location = new System.Drawing.Point(207, 41);
-            this.RadioButton_StartSecondPlayer.Name = "RadioButton_StartSecondPlayer";
-            this.RadioButton_StartSecondPlayer.Size = new System.Drawing.Size(14, 13);
-            this.RadioButton_StartSecondPlayer.TabIndex = 49;
-            this.RadioButton_StartSecondPlayer.TabStop = true;
-            this.RadioButton_StartSecondPlayer.UseVisualStyleBackColor = true;
+            this.RadioButton_StartYellowPlayer.AutoSize = true;
+            this.RadioButton_StartYellowPlayer.Location = new System.Drawing.Point(207, 41);
+            this.RadioButton_StartYellowPlayer.Name = "RadioButton_StartSecondPlayer";
+            this.RadioButton_StartYellowPlayer.Size = new System.Drawing.Size(14, 13);
+            this.RadioButton_StartYellowPlayer.TabIndex = 49;
+            this.RadioButton_StartYellowPlayer.TabStop = true;
+            this.RadioButton_StartYellowPlayer.UseVisualStyleBackColor = true;
             // 
             // Label_ChoosePlayerFirstMove
             // 
@@ -627,13 +627,13 @@
             // PlayerInput
             // 
             this.PlayerInput.Controls.Add(this.Label_ChoosePlayerFirstMove);
-            this.PlayerInput.Controls.Add(this.RadioButton_StartSecondPlayer);
-            this.PlayerInput.Controls.Add(this.RadioButton_StartFirstPlayer);
+            this.PlayerInput.Controls.Add(this.RadioButton_StartYellowPlayer);
+            this.PlayerInput.Controls.Add(this.RadioButton_StartRedPlayer);
             this.PlayerInput.Controls.Add(this.button1);
-            this.PlayerInput.Controls.Add(this.Label_PlayerTwo);
-            this.PlayerInput.Controls.Add(this.Label_PlayerOne);
-            this.PlayerInput.Controls.Add(this.TextBox_PlayerTwo);
-            this.PlayerInput.Controls.Add(this.TextBox_PlayerOne);
+            this.PlayerInput.Controls.Add(this.Label_PlayerYellow);
+            this.PlayerInput.Controls.Add(this.Label_PlayerRed);
+            this.PlayerInput.Controls.Add(this.TextBox_PlayerYellow);
+            this.PlayerInput.Controls.Add(this.TextBox_PlayerRed);
             this.PlayerInput.Location = new System.Drawing.Point(12, 12);
             this.PlayerInput.Name = "PlayerInput";
             this.PlayerInput.Size = new System.Drawing.Size(724, 65);
@@ -701,13 +701,13 @@
         private TextBox TextBoxB6;
         private TextBox TextBoxA6;
         private Panel PlayField;
-        private TextBox TextBox_PlayerOne;
-        private TextBox TextBox_PlayerTwo;
-        private Label Label_PlayerOne;
-        private Label Label_PlayerTwo;
+        private TextBox TextBox_PlayerRed;
+        private TextBox TextBox_PlayerYellow;
+        private Label Label_PlayerRed;
+        private Label Label_PlayerYellow;
         private Button button1;
-        private RadioButton RadioButton_StartFirstPlayer;
-        private RadioButton RadioButton_StartSecondPlayer;
+        private RadioButton RadioButton_StartRedPlayer;
+        private RadioButton RadioButton_StartYellowPlayer;
         private Label Label_ChoosePlayerFirstMove;
         private Panel PlayerInput;
         private Button Button_ColG;

@@ -9,10 +9,11 @@ namespace Data
 {
     public class Player
     {
-        public Player()
+        public Player(Color color)
         {
             IsPlaying = false;
             Moves = 0;
+            PlayFieldColor = color;
         }
 
         public string Name { get; set; }

@@ -13,11 +13,14 @@ namespace Logic
         public bool IsWin();
 
         public void GameMove(int column);
-        
-        public bool IsGameOver();
 
         public Player GetWinner();
 
-        public TimeSpan GetPlayTime();
+        public FieldCellStatus[,] GetPlayingField();
+
+
+        public bool IsGameOver();
+
+        public TimeSpan GetElapsedTime();
     }
 }

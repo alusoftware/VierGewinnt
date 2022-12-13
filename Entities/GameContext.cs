@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,18 +9,24 @@ namespace Data
 {
     public class GameContext
     {
-        public GameContext()
+        public GameContext(bool isRedStarting)
         {
             PlayingField = new FieldCellStatus[Common.NumberOfColumns,Common.NumberOfRows];
-            PlayerOne = new Player();
-            PlayerTwo = new Player();
+            PlayerRed = new Player(Color.Red);
+            PlayerYellow = new Player(Color.Yellow);
+
+            if (isRedStarting)
+                PlayerRed.IsPlaying = true;
+            else
+                PlayerYellow.IsPlaying = true;
         }
 
         public FieldCellStatus[,] PlayingField { get; set; }
 
-        public Player PlayerOne { get; set; }
-        public Player PlayerTwo { get; set; }
+        public Player PlayerRed { get; set; }
+        public Player PlayerYellow { get; set; }
 
-        public TimeSpan PlayTime { get; set; }
+        public DateTime StartTime { get; set; }
+        public TimeSpan ElapsedTime { get; set; }
     }
 }
