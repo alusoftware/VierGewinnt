@@ -14,8 +14,6 @@ namespace Data
         public string Name { get; set; }
         public int Moves { get; set; }
         public bool IsPlaying { get; set; }
-
         public Color PlayFieldColor { get; set; }
-
     }
 }
