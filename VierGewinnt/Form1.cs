@@ -1,5 +1,6 @@
 using Data;
 using Logic;
+using Logic.Exceptions;
 
 namespace VierGewinnt
 {
@@ -21,7 +22,7 @@ namespace VierGewinnt
         {
             if (IsPlayerInputValid(TextBox_PlayerRed.Text, TextBox_PlayerYellow.Text))
             {
-                InitalizePlayfield();
+                InitializePlayfield();
                 GetTextBoxesInArrays();
                 gameMaster = new GameMaster(TextBox_PlayerRed.Text, TextBox_PlayerYellow.Text, RadioButton_StartRedPlayer.Checked);
             }
@@ -34,7 +35,7 @@ namespace VierGewinnt
             return !String.IsNullOrWhiteSpace(playerOne) && !String.IsNullOrWhiteSpace(playerTwo);
         }
 
-        private void InitalizePlayfield()
+        private void InitializePlayfield()
         {
             PlayerInput.Visible = false;
             PlayField.Visible = true;
@@ -63,14 +64,22 @@ namespace VierGewinnt
                 }
             }
 
-            if (gameMaster.IsWin())
+            try
             {
-                var timespan = gameMaster.GetElapsedTime();
-                ShowWinnerDetails(gameMaster.GetWinner().Name, gameMaster.GetWinner().Moves, timespan.Minutes, timespan.Seconds);
+                if (gameMaster.IsWin())
+                {
+                    var timespan = gameMaster.GetElapsedTime();
+                    ShowWinnerDetails(gameMaster.GetWinner().Name, gameMaster.GetWinner().Moves, timespan.Minutes, timespan.Seconds);
+                }
+                else if (gameMaster.IsGameOver())
+                {
+                    MessageBox.Show("Niemand hat gewonnen!");
+                }
+
             }
-            else if (gameMaster.IsGameOver())
+            catch (NoWinnerFoundException e)
             {
-                MessageBox.Show("Niemand hat gewonnen!");
+                MessageBox.Show(e.Message);
             }
         }
 

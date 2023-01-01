@@ -1,4 +1,5 @@
 ﻿using Data;
+using Logic.Exceptions;
 using System.Drawing;
 
 namespace Logic
@@ -6,10 +7,12 @@ namespace Logic
     public class GameMaster : IGameMaster
     {
         private readonly GameContext gameContext;
+        private readonly IWinChecker winChecker;
 
         public GameMaster(string playerRed, string playerYellow, bool playerRedStart)
         {
             gameContext = new GameContext(playerRedStart);
+            winChecker = new WinChecker(gameContext);
 
             gameContext.PlayerRed.Name = playerRed;
             gameContext.PlayerYellow.Name = playerYellow;
@@ -28,6 +31,14 @@ namespace Logic
                     break;
                 }
             }
+        }
+
+        public bool IsWin()
+        {
+            bool isWin = winChecker.IsWin();
+            if (isWin)
+                StopTimeMeasure();
+            return isWin;
         }
 
         private FieldCellStatus ConvertPlayerColorToPlayFieldStatus(Color color)
@@ -74,125 +85,11 @@ namespace Logic
         public Player GetWinner()
         {
             if (IsWin())
+            {
                 return gameContext.PlayerYellow.IsPlaying ? gameContext.PlayerRed : gameContext.PlayerYellow;
-            else
-                return null;
-        }
-
-        public bool IsWin()
-        {
-            bool isWin = CheckHorizontal() || CheckVertical() || CheckDiagonalUp() || CheckDiagonalDown();
-            if (isWin)
-                StopTimeMeasure();
-            return isWin;
-        }
-
-        private bool CheckHorizontal()
-        {
-            for (int i = 0; i < Common.NumberOfRows; i++)
-            {
-                int counter = 1;
-                FieldCellStatus tempStatus = FieldCellStatus.Empty;
-                FieldCellStatus currentStatus;
-
-                for (int j = 0; j < Common.NumberOfColumns; j++)
-                {
-                    currentStatus = gameContext.PlayingField[j, i];
-
-                    if (tempStatus == currentStatus && currentStatus != FieldCellStatus.Empty)
-                        counter++;
-                    else
-                        counter = 1;
-
-                    if (counter >= 4)
-                        return true;
-
-                    tempStatus = currentStatus;
-                }
             }
-            return false;
-        }
 
-        private bool CheckVertical()
-        {
-            for (int i = 0; i < Common.NumberOfColumns; i++)
-            {
-                int counter = 1;
-                FieldCellStatus tempStatus = FieldCellStatus.Empty;
-                FieldCellStatus currentStatus;
-
-                for (int j = 0; j < Common.NumberOfRows; j++)
-                {
-                    currentStatus = gameContext.PlayingField[i, j];
-
-                    if (tempStatus == currentStatus && currentStatus != FieldCellStatus.Empty)
-                        counter++;
-                    else
-                        counter = 1;
-
-                    if (counter >= 4)
-                        return true;
-
-                    tempStatus = currentStatus;
-                }
-            }
-            return false;
-        }
-
-        private bool CheckDiagonalUp()
-        {
-            for (int i = 0; i < Common.NumberOfColumns; i++)
-            {
-                for (int j = 0; j < Common.NumberOfRows; j++)
-                {
-                    if (i + 3 >= Common.NumberOfColumns || j - 3 < 0)
-                        continue;
-
-                    int counter = 1;
-                    FieldCellStatus currentStatus;
-                    currentStatus = gameContext.PlayingField[i, j];
-
-                    for (int k = 1; k < 4; k++)
-                    {
-                        if (gameContext.PlayingField[i + k, j - k] == currentStatus && currentStatus != FieldCellStatus.Empty)
-                            counter++;
-                        else
-                            counter = 1;
-                    }
-
-                    if (counter >= 4)
-                        return true;
-                }
-            }
-            return false;
-        }
-
-        private bool CheckDiagonalDown()
-        {
-            for (int i = 0; i < Common.NumberOfColumns; i++)
-            {
-                for (int j = 0; j < Common.NumberOfRows; j++)
-                {
-                    if (i + 3 >= Common.NumberOfColumns || j + 3 >= Common.NumberOfRows)
-                        continue;
-
-                    int counter = 1;
-                    FieldCellStatus currentStatus;
-                    currentStatus = gameContext.PlayingField[i, j];
-
-                    for (int k = 1; k < 4; k++)
-                    {
-                        if (gameContext.PlayingField[i + k, j + k] == currentStatus && currentStatus != FieldCellStatus.Empty)
-                            counter++;
-                        else
-                            counter = 1;
-                    }
-
-                    if (counter >= 4)
-                        return true;
-                }
-            }
-            return false;
+            throw new NoWinnerFoundException();
         }
 
         private void StartTimeMeasure()
